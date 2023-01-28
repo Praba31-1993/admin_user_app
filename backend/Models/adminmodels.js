@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const validator = require("validator");
 const adminSchema = new mongoose.Schema({
     fname : {
         type : String,
@@ -23,7 +24,7 @@ const adminSchema = new mongoose.Schema({
     address : {
         type:String,
         required:true,
-        minlength:6
+        minlength:3
     },
     role : {
         type:String,
@@ -36,7 +37,12 @@ const adminSchema = new mongoose.Schema({
         type:String,
         required:true,
         minlength:6
-    }
+    },
+    password : {
+        type:String,
+        required:true,
+        minlength:6
+    },
     
 })
 
